@@ -1,16 +1,17 @@
-import { Geist, Inter } from 'next/font/google';
+import { Inter } from 'next/font/google';
 import { Metadata } from 'next';
 import '../assets/styles/globals.css';
-const geistSans = Geist({
-  variable: '--font-geist-sans',
-  subsets: ['latin'],
-});
+import { APP_DESCRIPTION, APP_NAME, SERVER_URL } from '@/lib/constants';
 
 const inter = Inter({ subsets: ['latin'] });
 
-export const matadata: Metadata = {
-  title: 'Prostore',
-  description: 'A modern ecommerce platofrm built with Next.jss',
+export const metadata: Metadata = {
+  title: {
+    template: `%s | Prostore`,
+    default: APP_NAME,
+  },
+  description: APP_DESCRIPTION,
+  metadataBase: new URL(SERVER_URL),
 };
 export default function RootLayout({
   children,
@@ -19,9 +20,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='en'>
-      <body className={`${geistSans.variable} ${inter.className} antialiased`}>
-        {children}
-      </body>
+      <body className={` ${inter.className} antialiased`}>{children}</body>
     </html>
   );
 }
