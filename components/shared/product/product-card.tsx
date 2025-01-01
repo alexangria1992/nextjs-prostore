@@ -3,7 +3,8 @@ import React from 'react';
 import { Card, CardHeader, CardContent } from '@/components/ui/card';
 import Image from 'next/image';
 import ProductPrice from './product-price';
-const ProductCard = ({ product }: { product: any }) => {
+import { Product } from '@/types';
+const ProductCard = ({ product }: { product: Product }) => {
   return (
     <Card className='w-full max-w-sm'>
       <CardHeader className='p-0 items-center'>
