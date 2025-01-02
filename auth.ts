@@ -1,4 +1,3 @@
-import { NextAuthConfig } from './node_modules/next-auth/src/lib/index';
 import { PrismaAdapter } from '@auth/prisma-adapter';
 import NextAuth from 'next-auth';
 import { prisma } from './db/prisma';
